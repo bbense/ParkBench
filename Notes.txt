@@ -1,0 +1,27 @@
+Notes: 
+
+
+Stuff needed to get openafs to ./configure to run to completion
+
+regen.sh: 
+
+apt-get update 
+
+
+apt-get install libtool 
+sudo apt-get install automake 
+
+Now can run regen.sh
+
+
+./configure: 
+
+sudo apt-get install linux-headers-$(uname -r)
+
+
+sudo apt-get install libgssapi2-heimdal  
+sudo apt-get install heimdal-clients heimdal-dev 
+sudo apt-get install heimdal-kdc heimdal-servers
+sudo apt-get install flex byacc libncurses5-dev 
+
+./configure --enable-namei-fileserver --enable-transarc-paths --enable-supergroups --with-afs-sysname=i386_linux26
