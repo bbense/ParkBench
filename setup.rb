@@ -94,6 +94,7 @@ end
 #require 'rubygems'
 #require 'vagrant'
 #env = Vagrant::Environment.new
+# 
 boxes = `vagrant box list`.split(/\n/) 
 while boxes.empty? do 
   get_box = finder.yesno("You don't have any boxes installed.\nDo you want to download an example Ubuntu Lucid box?[y/n] ")
@@ -117,6 +118,10 @@ boxes.each do |box|
 end 
 
 finder.write_box("boxConfig.yaml")
+
+# Now we can copy Vagrantfile.dist into Vagrantfile
+cmd = "cp Vagrantfile.dist Vagrantfile" 
+system cmd 
 
 # Is there src in openafs? git clone if not. 
 unless File.exists?("./openafs/configure")
