@@ -25,3 +25,10 @@ sudo apt-get install heimdal-kdc heimdal-servers
 sudo apt-get install flex byacc libncurses5-dev 
 
 ./configure --enable-namei-fileserver --enable-transarc-paths --enable-supergroups --with-afs-sysname=i386_linux26
+
+
+sl6-64 : 
+
+Need to install scp to allow chef-solo to run 
+
+ sudo yum install openssh-clients

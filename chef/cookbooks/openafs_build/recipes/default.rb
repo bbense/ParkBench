@@ -32,7 +32,8 @@
 prereq = Array.new
 
 case node[:platform]
-  # when "centos","redhat","fedora","suse"
+  when "scientific"
+  	prereq = %w[ git gcc libtool automake flex byacc libgssglue ]
     
   when "debian","ubuntu"
   	include_recipe "apt"
