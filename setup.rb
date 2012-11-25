@@ -124,7 +124,7 @@ cmd = "cp Vagrantfile.dist Vagrantfile"
 system cmd 
 
 # Is there src in openafs? git clone if not. 
-unless File.exists?("./openafs/configure")
+unless File.exists?("./openafs/regen.sh")
   get_openafs = finder.yesno("You don't appear to have OpenAFS code in ./openafs.\nDo you want to git clone from master?[y/n] ")
   if (get_openafs) 
     cmd =  "git clone git://git.openafs.org/openafs.git"
