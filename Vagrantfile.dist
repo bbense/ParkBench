@@ -18,7 +18,9 @@ Vagrant::Config.run do |config|
       # path, and data_bags path (all relative to this Vagrantfile), and adding 
       # some recipes and/or roles. Will need to case this with value of boxes[key]
       # eventually, for now assume build. 
-      #
+      # Stupid sl6 box doesn't have scp installed, check for it and install to allow 
+      # chef-solo to run 
+      key_config.vm.provision :shell , :path => "scp_test.sh"
       key_config.vm.provision :chef_solo do |chef|
         chef.cookbooks_path = "./chef/cookbooks"
         # chef.roles_path = "./chef/roles"
