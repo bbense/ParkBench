@@ -33,9 +33,11 @@ Vagrant::Config.run do |config|
       # Keep it visibile in the top level for now. 
       # Building from the /vagrant filesystem runs into performance/timing problems.
       # The symptom is files that should be r/w return "read-only" filesystem errors.
-      key_config.vm.provision  :shell, :inline => "git clone /vagrant/openafs"
+      # Annoying all this runs as root, chown -R or ?? 
+      key_config.vm.provision  :shell, :inline => "if [ ! -d openafs ] ; then  git clone /vagrant/openafs ; fi"
       key_config.vm.provision  :shell, :inline => "cd openafs; ./regen.sh"
-      # Run configure command
+      # Run configure command, this will need per OS tweaking. 
+      key_config.vm.provision  :shell, :inline => "cd openafs; ./configure  --enable-namei-fileserver --enable-transarc-paths --enable-supergroups "
   end
   # Build OpenAFS 
   end

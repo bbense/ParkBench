@@ -36,7 +36,7 @@ case node[:platform]
     
   when "debian","ubuntu"
   	include_recipe "apt"
-    prereq = %w[ libtool automake flex byacc heimdal-dev git-core ]
+    prereq = %w[ build-essential libtool automake flex byacc heimdal-dev git-core ]
     prereq << "linux-headers-" + `uname -r`.chomp
 end
 
