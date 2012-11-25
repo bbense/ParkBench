@@ -13,15 +13,15 @@ Currently, running setup.rb will create create a Vagrantfile that will automatic
 OpenAFS src and all the tools and libraries required to build it. setup.rb will examine which virtualboxes
 you have installed and ask you for which you want to build OpenAFS. 
 
-Once you've run setup.rb, you should be able to do 
+Once you've run setup.rb, you should be able to do :
 
-vagrant up boxname
+	vagrant up boxname
 
-and then 
+and then :
 
-vagrant ssh boxname
-cd openafs 
-make 
+	vagrant ssh boxname
+	cd openafs 
+	make 
 
 to build OpenAFS for that OS. So far this has only been tested on the default Ubuntu 32 and 64
 virtualboxes that are distributed from the Vagrant website. 
