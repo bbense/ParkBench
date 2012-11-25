@@ -38,6 +38,7 @@ Vagrant::Config.run do |config|
       key_config.vm.provision  :shell, :inline => "cd openafs; ./regen.sh"
       # Run configure command, this will need per OS tweaking. 
       key_config.vm.provision  :shell, :inline => "cd openafs; ./configure  --enable-namei-fileserver --enable-transarc-paths --enable-supergroups "
+      key_config.vm.provision  :shell, :inline => "chown -r vagrant openafs"
   end
   # Build OpenAFS 
   end
