@@ -31,6 +31,7 @@
 
 # This should install everything needed to compile C. 
 include_recipe "build-essential"
+include_recipe "git"
 
 prereq = Array.new
 
