@@ -29,6 +29,9 @@
 # heimdal-clients, heimdal-dev, heimdal-kdc, heimdal-servers
 # flex, byacc, libncurses5-dev 
 
+# This should install everything needed to compile C. 
+include_recipe "build-essential"
+
 prereq = Array.new
 
 case node[:platform]
