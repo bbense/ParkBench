@@ -17,6 +17,7 @@ task :default => 'foodcritic'
 private
 
 def prepare_foodcritic_sandbox(sandbox)
+  cd "chef/openafs_build"
   files = %w{*.md *.rb attributes definitions files libraries providers
 recipes resources templates}
 
