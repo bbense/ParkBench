@@ -26,6 +26,14 @@ and then :
 to build OpenAFS for that OS. So far this has only been tested on the default Ubuntu 32 and 64
 virtualboxes that are distributed from the Vagrant website. 
 
+Travis Status
+==========
+
+
+![alt text](https://api.travis-ci.org/bbense/ParkBench.png "Travis CI build status")
+
+So far just running foodcritic on the cookbooks specific to the project. 
+
 Next Steps
 =========
 
