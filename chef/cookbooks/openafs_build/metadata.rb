@@ -14,6 +14,6 @@ end
 
 # supports "mac_os_x", ">= 10.6.0"
 
-%w{ build-essential git  }.each do |cookbook|
+%w{ build-essential git apt  }.each do |cookbook|
   depends cookbook
 end

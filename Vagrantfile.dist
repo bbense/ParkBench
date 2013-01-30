@@ -20,7 +20,11 @@ Vagrant::Config.run do |config|
       # eventually, for now assume build. 
       # Stupid sl6 box doesn't have scp installed, check for it and install to allow 
       # chef-solo to run, old version of ohai as well. 
-      key_config.vm.provision :shell , :inline => 'if [ ! -x /usr/bin/scp] ; then if [-x /usr/bin/yum ] then yum install openssh-clients ; fi ; fi'
+      # key_config.vm.provision :shell , :path => 'scripts/scp_test.sh' 
+      # More testing reveals that there is no way to do this via vm.provision 
+      # Just need to configure the box correctly to start with. 
+
+      # Test for recent enough version of ohai to work with build_essentials. 
       key_config.vm.provision :shell , :path => "scripts/ohai_test.sh"
       key_config.vm.provision :chef_solo do |chef|
         chef.cookbooks_path = "./chef/cookbooks"
