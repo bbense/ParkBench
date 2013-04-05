@@ -13,7 +13,10 @@ recipe            "default", "Builds OpenAFS from source code"
 end
 
 # supports "mac_os_x", ">= 10.6.0"
-
-%w{ build-essential git apt  }.each do |cookbook|
-  depends cookbook
-end
+# Food critic does not grok this
+#%w{ build-essential git apt  }.each do |cookbook|
+#  depends cookbook
+#end
+depends build-essential
+depends git
+depends apt
