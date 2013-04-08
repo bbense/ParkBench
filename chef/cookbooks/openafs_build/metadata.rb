@@ -17,6 +17,6 @@ end
 #%w{ build-essential git apt  }.each do |cookbook|
 #  depends cookbook
 #end
-depends build-essential
-depends git
-depends apt
+depends 'build-essential'
+depends 'git'
+depends 'apt'
